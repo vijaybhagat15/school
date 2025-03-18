@@ -7,7 +7,24 @@ const Schools = () => {
 
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  const schoolsData = {
+  // const schoolsData = {
+  //   Bangalore: [
+  //     { name: "NovaStar Primary School", logo: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar Middle School", logo: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar High School", logo: "images/school/s3.avif" },
+  //   ],
+  //   Mumbai: [
+  //     { name: "NovaStar Public School", logo: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar International School", logo: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar Senior Secondary", logo: "images/school/s3.avif" },
+  //   ],
+  //   Delhi: [
+  //     { name: "NovaStar Academy Primary", logo: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar Academy Middle", logo: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar Academy High", logo: "images/school/s3.avif" },
+  //   ],
+  // };
+  const schoolsData: Record<string, { name: string; logo: string }[]> = {
     Bangalore: [
       { name: "NovaStar Primary School", logo: "images/school/PrimarySchool.avif" },
       { name: "NovaStar Middle School", logo: "images/school/PrimarySchool.avif" },
@@ -24,6 +41,7 @@ const Schools = () => {
       { name: "NovaStar Academy High", logo: "images/school/s3.avif" },
     ],
   };
+  
 
   return (
     <div className="bg-gray-100 py-10">

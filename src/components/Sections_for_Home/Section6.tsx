@@ -85,9 +85,11 @@ const newsData = [
   },
 ];
 
-// Custom arrow components 
-const PrevArrow = (props: any) => {
-  const { onClick } = props;
+interface ArrowProps {
+  onClick?: () => void;
+}
+
+const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
   return (
     <button
       className="absolute -left-14 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-60 w-12 h-12 flex items-center justify-center rounded-full text-white hover:bg-opacity-80 transition-all z-20"
@@ -98,8 +100,7 @@ const PrevArrow = (props: any) => {
   );
 };
 
-const NextArrow = (props: any) => {
-  const { onClick } = props;
+const NextArrow: React.FC<ArrowProps> = ({ onClick }) => {
   return (
     <button
       className="absolute -right-14 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-60 w-12 h-12 flex items-center justify-center rounded-full text-white hover:bg-opacity-80 transition-all z-20"
@@ -109,6 +110,7 @@ const NextArrow = (props: any) => {
     </button>
   );
 };
+
 const Section6 = () => {
   const { ref, inView } = useInView({
     triggerOnce: false, 
