@@ -26,9 +26,9 @@ const Schools = () => {
   // };
   const schoolsData: Record<string, { name: string; image: string }[]> = {
     Bangalore: [
-      { name: "NovaStar Primary School", image: "images/school/PrimarySchool.avif" },
-      { name: "NovaStar Middle School", image: "images/school/PrimarySchool.avif" },
-      { name: "NovaStar High School", image: "images/school/s3.avif" },
+      { name: "NovaStar Primary School", image: "/images/school/PrimarySchool.avif" },
+      { name: "NovaStar Middle School", image: "/images/school/PrimarySchool.avif" },
+      { name: "NovaStar High School", image: "/images/school/s3.avif" },
     ],
     Mumbai: [
       { name: "NovaStar Public School", image: "images/school/PrimarySchool.avif" },
