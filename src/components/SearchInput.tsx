@@ -65,7 +65,7 @@ const SearchInput = () => {
 
       {/* Suggestions Dropdown */}
       {isDropdownVisible && filteredSuggestions.length > 0 && (
-        <ul className="absolute top-12 left-0 w-full bg-white border border-gray-300 rounded-md shadow-md z-10">
+        <ul className="absolute top-[43px] left-0 w-full bg-white border border-gray-300 rounded-md shadow-md z-10">
           {filteredSuggestions.map((suggestion, index) => (
             <li
               key={index}
