@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Text Colors */
+.text-primary {
+  @apply text-blue-900;
+}
+
+.text-secondary {
+  @apply text-blue-600;
+}
+
+.text-danger {
+  @apply text-red-700;
+}
+
+.text-light {
+  @apply text-white;
+}
