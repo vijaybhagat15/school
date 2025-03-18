@@ -1,10 +1,8 @@
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { GraduationCap, University, School, Users } from "lucide-react";
-import { useRef } from "react";
-
+import { useInView, } from "react-intersection-observer";
 const Section3 = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { triggerOnce: false, threshold: 0.2 });
+  const { ref, inView: isInView } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   const stats = [
     {

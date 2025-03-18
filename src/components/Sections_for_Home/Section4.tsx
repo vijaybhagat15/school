@@ -1,6 +1,6 @@
-import { motion, useInView } from "framer-motion";
+import { motion,} from "framer-motion";
 import { MapPin, GraduationCap, Video } from "lucide-react";
-import { useRef } from "react";
+import { useInView, } from "react-intersection-observer";
 
 const schools = [
   {
@@ -36,8 +36,8 @@ const videos = [
 ];
 
 const Section4 = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { triggerOnce: false, threshold: 0.2 });
+const { ref, inView: isInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+
 
   return (
     <section ref={ref} className="py-6 px-6 text-center text-blue-600">

@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-
+import { useInView, } from "react-intersection-observer";
 const Section2 = () => {
   const features = [
     { title: "Talented Teachers", image: "images/TalentedTeachers.jpg" },
     { title: "Dedicated Counselors", image: "images/DedicatedCounselors.jpg" },
     { title: "Higher Education Access & Support", image: "images/HigherEducation.jpg" },
   ];
+   const { ref, inView: isInView } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   return (
     <section className="text-center py-6 px-4">
@@ -17,33 +17,32 @@ const Section2 = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
         {features.map((feature, index) => {
-          const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.3 });
           return (
             <motion.div
-  ref={ref}
-  key={index}
-  className="relative overflow-hidden rounded-lg shadow-lg"
-  initial={{ opacity: 0, scale: 0.9 }}
-  animate={inView ? { opacity: 1, scale: 1 } : {}}
-  transition={{ duration: 0.5 }}
-  whileHover={{ scale: 1.05 }} // Slight zoom on hover
->
-  <motion.img
-    src={feature.image}
-    alt={feature.title}
-    className="w-full h-80 object-cover transition-transform duration-300"
-  />
-  <motion.div
-    className="absolute bottom-4 left-0 right-0 flex items-center justify-center"
-    initial={{ y: 50, opacity: 0 }}
-    animate={inView ? { y: 0, opacity: 1 } : {}}
-    transition={{ duration: 0.5, delay: 0.2 }}
-  >
-    <h3 className="text-white font-bold text-lg bg-black bg-opacity-50 px-4 py-2 rounded-lg">
-      {feature.title}
-    </h3>
-  </motion.div>
-</motion.div>
+              ref={ref}
+              key={index}
+              className="relative overflow-hidden rounded-lg shadow-lg"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05 }} // Slight zoom on hover
+            >
+              <motion.img
+                src={feature.image}
+                alt={feature.title}
+                className="w-full h-80 object-cover transition-transform duration-300"
+              />
+              <motion.div
+                className="absolute bottom-4 left-0 right-0 flex items-center justify-center"
+                initial={{ y: 50, opacity: 0 }}
+                animate={isInView ? { y: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <h3 className="text-white font-bold text-lg bg-black bg-opacity-50 px-4 py-2 rounded-lg">
+                  {feature.title}
+                </h3>
+              </motion.div>
+            </motion.div>
 
           );
         })}
