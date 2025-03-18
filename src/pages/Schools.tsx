@@ -9,36 +9,36 @@ const Schools = () => {
 
   // const schoolsData = {
   //   Bangalore: [
-  //     { name: "NovaStar Primary School", logo: "images/school/PrimarySchool.avif" },
-  //     { name: "NovaStar Middle School", logo: "images/school/PrimarySchool.avif" },
-  //     { name: "NovaStar High School", logo: "images/school/s3.avif" },
+  //     { name: "NovaStar Primary School", image: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar Middle School", image: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar High School", image: "images/school/s3.avif" },
   //   ],
   //   Mumbai: [
-  //     { name: "NovaStar Public School", logo: "images/school/PrimarySchool.avif" },
-  //     { name: "NovaStar International School", logo: "images/school/PrimarySchool.avif" },
-  //     { name: "NovaStar Senior Secondary", logo: "images/school/s3.avif" },
+  //     { name: "NovaStar Public School", image: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar International School", image: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar Senior Secondary", image: "images/school/s3.avif" },
   //   ],
   //   Delhi: [
-  //     { name: "NovaStar Academy Primary", logo: "images/school/PrimarySchool.avif" },
-  //     { name: "NovaStar Academy Middle", logo: "images/school/PrimarySchool.avif" },
-  //     { name: "NovaStar Academy High", logo: "images/school/s3.avif" },
+  //     { name: "NovaStar Academy Primary", image: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar Academy Middle", image: "images/school/PrimarySchool.avif" },
+  //     { name: "NovaStar Academy High", image: "images/school/s3.avif" },
   //   ],
   // };
-  const schoolsData: Record<string, { name: string; logo: string }[]> = {
+  const schoolsData: Record<string, { name: string; image: string }[]> = {
     Bangalore: [
-      { name: "NovaStar Primary School", logo: "images/school/PrimarySchool.avif" },
-      { name: "NovaStar Middle School", logo: "images/school/PrimarySchool.avif" },
-      { name: "NovaStar High School", logo: "images/school/s3.avif" },
+      { name: "NovaStar Primary School", image: "images/school/PrimarySchool.avif" },
+      { name: "NovaStar Middle School", image: "images/school/PrimarySchool.avif" },
+      { name: "NovaStar High School", image: "images/school/s3.avif" },
     ],
     Mumbai: [
-      { name: "NovaStar Public School", logo: "images/school/PrimarySchool.avif" },
-      { name: "NovaStar International School", logo: "images/school/PrimarySchool.avif" },
-      { name: "NovaStar Senior Secondary", logo: "images/school/s3.avif" },
+      { name: "NovaStar Public School", image: "images/school/PrimarySchool.avif" },
+      { name: "NovaStar International School", image: "images/school/PrimarySchool.avif" },
+      { name: "NovaStar Senior Secondary", image: "images/school/s3.avif" },
     ],
     Delhi: [
-      { name: "NovaStar Academy Primary", logo: "images/school/PrimarySchool.avif" },
-      { name: "NovaStar Academy Middle", logo: "images/school/PrimarySchool.avif" },
-      { name: "NovaStar Academy High", logo: "images/school/s3.avif" },
+      { name: "NovaStar Academy Primary", image: "images/school/PrimarySchool.avif" },
+      { name: "NovaStar Academy Middle", image: "images/school/PrimarySchool.avif" },
+      { name: "NovaStar Academy High", image: "images/school/s3.avif" },
     ],
   };
   
@@ -92,7 +92,7 @@ const Schools = () => {
               className="flex flex-col items-center space-x-4 bg-white p-4 rounded-lg shadow-md"
               whileHover={{ scale: 1.05 }}
             >
-              <img src={school.logo} alt={school.name} className="h-64 w-64 rounded-lg" />
+              <img src={school.image} alt={school.name} className="h-64 w-64 rounded-lg" />
               <h3 className="font-semibold text-blue-900">{school.name}</h3>
             </motion.div>
           ))}
