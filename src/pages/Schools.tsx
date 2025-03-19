@@ -2,36 +2,46 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-// Define each region's schools as separate objects
-const bangaloreSchools: { name: string; image: string }[] = [
-  { name: "NovaStar Primary School", image: "public/images/school1/PrimarySchool.avif" },
-  { name: "NovaStar Middle School", image: "public/images/school1/PrimarySchool.avif" },
-  { name: "NovaStar High School", image: "public/images/school1/s3.avif" },
-];
-
-const mumbaiSchools: { name: string; image: string }[] = [
-  { name: "NovaStar Public School", image: "public/images/school1/PrimarySchool.avif" },
-  { name: "NovaStar International School", image: "public/images/school1/PrimarySchool.avif" },
-  { name: "NovaStar Senior Secondary", image: "public/images/school1/s3.avif" },
-];
-
-const delhiSchools: { name: string; image: string }[] = [
-  { name: "NovaStar Academy Primary", image: "public/images/school1/PrimarySchool.avif" },
-  { name: "NovaStar Academy Middle", image: "public/images/school1/PrimarySchool.avif" },
-  { name: "NovaStar Academy High", image: "public/images/school1/s3.avif" },
-];
-
-// Map region names to their corresponding school objects
-const schoolsMap: Record<string, { name: string; image: string }[]> = {
-  Bangalore: bangaloreSchools,
-  Mumbai: mumbaiSchools,
-  Delhi: delhiSchools,
-};
-
 const Schools = () => {
   const [selectedRegion, setSelectedRegion] = useState("Bangalore");
 
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  // const schoolsData = {
+  //   Bangalore: [
+  //     { name: "NovaStar Primary School", image: "public/images/school1/PrimarySchool.avif" },
+  //     { name: "NovaStar Middle School", image: "public/images/school1/PrimarySchool.avif" },
+  //     { name: "NovaStar High School", image: "public/images/school1/s3.avif" },
+  //   ],
+  //   Mumbai: [
+  //     { name: "NovaStar Public School", image: "public/images/school1/PrimarySchool.avif" },
+  //     { name: "NovaStar International School", image: "public/images/school1/PrimarySchool.avif" },
+  //     { name: "NovaStar Senior Secondary", image: "public/images/school1/s3.avif" },
+  //   ],
+  //   Delhi: [
+  //     { name: "NovaStar Academy Primary", image: "public/images/school1/PrimarySchool.avif" },
+  //     { name: "NovaStar Academy Middle", image: "public/images/school1/PrimarySchool.avif" },
+  //     { name: "NovaStar Academy High", image: "public/images/school1/s3.avif" },
+  //   ],
+  // };
+  const schoolsData: Record<string, { name: string; image: string }[]> = {
+    Bangalore: [
+      { name: "NovaStar Primary School", image: "public/images/school1/PrimarySchool.avif" },
+      { name: "NovaStar Middle School", image: "public/images/school1/PrimarySchool.avif" },
+      { name: "NovaStar High School", image: "public/images/school1/s3.avif" },
+    ],
+    Mumbai: [
+      { name: "NovaStar Public School", image: "public/images/school1/PrimarySchool.avif" },
+      { name: "NovaStar International School", image: "public/images/school1/PrimarySchool.avif" },
+      { name: "NovaStar Senior Secondary", image: "public/images/school1/s3.avif" },
+    ],
+    Delhi: [
+      { name: "NovaStar Academy Primary", image: "public/images/school1/PrimarySchool.avif" },
+      { name: "NovaStar Academy Middle", image: "public/images/school1/PrimarySchool.avif" },
+      { name: "NovaStar Academy High", image: "public/images/school1/s3.avif" },
+    ],
+  };
+  
 
   return (
     <div className="bg-gray-100 py-10">
@@ -55,7 +65,7 @@ const Schools = () => {
 
         {/* Regions Selection */}
         <div className="flex justify-center space-x-6 mb-6">
-          {Object.keys(schoolsMap).map((region) => (
+          {Object.keys(schoolsData).map((region) => (
             <motion.button
               key={region}
               className={`px-4 py-2 rounded-full ${
@@ -76,7 +86,7 @@ const Schools = () => {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1, transition: { duration: 0.8 } } : {}}
         >
-          {schoolsMap[selectedRegion].map((school, index) => (
+          {schoolsData[selectedRegion].map((school, index) => (
             <motion.div 
               key={index} 
               className="flex flex-col items-center space-x-4 bg-white p-4 rounded-lg shadow-md"
