@@ -15,7 +15,7 @@ const Section2 = () => {
       NovaStar’s schools offer strong academics, inclusive support, and rich life opportunities.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-2">
         {features.map((feature, index) => {
           return (
             <motion.div
