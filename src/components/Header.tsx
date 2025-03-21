@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // Import icons
 import MobilenavLinks from "./Mobilenavelinks";
-import SearchInput from "./SearchInput";
-
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
@@ -18,10 +16,10 @@ const Header = () => {
         </span>
       </Link>
 
-      {/* Search Input (Hidden on Mobile) */}
+      {/* Search Input (Hidden on Mobile)
       <div className="hidden lg:block">
         <SearchInput />
-      </div>
+      </div> */}
       
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex items-center space-x-6 text-blue-900 font-semibold pr-10">

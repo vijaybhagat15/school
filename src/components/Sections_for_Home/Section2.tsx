@@ -9,13 +9,13 @@ const Section2 = () => {
    const { ref, inView: isInView } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   return (
-    <section className="text-center py-6 px-4">
+    <section className="text-center py-3 px-4">
       <h2 className="text-3xl font-bold text-blue-900">Your Future is Bright!</h2>
       <p className="text-lg text-blue-600 max-w-2xl mx-auto mt-3">
       NovaStar’s schools offer strong academics, inclusive support, and rich life opportunities.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
         {features.map((feature, index) => {
           return (
             <motion.div
