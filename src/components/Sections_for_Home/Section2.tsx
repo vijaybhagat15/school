@@ -15,7 +15,7 @@ const Section2 = () => {
       NovaStar’s schools offer strong academics, inclusive support, and rich life opportunities.
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
         {features.map((feature, index) => {
           return (
             <motion.div
@@ -23,7 +23,7 @@ const Section2 = () => {
               key={index}
               className="relative overflow-hidden rounded-lg shadow-lg"
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               whileHover={{ scale: 1.05 }} // Slight zoom on hover
             >
