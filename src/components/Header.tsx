@@ -11,7 +11,7 @@ const Header = () => {
       {/* Logo and Name */}
       <Link to="/" className="flex items-center space-x-2">
         <img src="/logo.png" alt="NovaStar Academy" className="h-10 md:h-14" />
-        <span className="text-base md:text-xl font-bold text-blue-900">
+        <span className="text-base md:text-2xl font-bold text-blue-900">
           NovaStar Academy
         </span>
       </Link>
@@ -22,13 +22,12 @@ const Header = () => {
       </div> */}
       
       {/* Desktop Navigation */}
-      <nav className="hidden lg:flex items-center space-x-6 text-blue-900 font-semibold pr-10">
+      <nav className="hidden text-lg lg:flex items-center space-x-6 text-blue-900 font-semibold pr-10">
         {[ 
           { name: "Home", path: "/" },
           { name: "Schools", path: "/Schools" },
           { name: "About", path: "/About" },
           { name: "Contact", path: "/Contact" },
-          { name: "Enroll", path: "/Enroll" },
           { name: "Careers", path: "/Careers" },
           { name: "News", path: "/News" },
         ].map((item) => (

@@ -1,189 +1,91 @@
-import { useInView } from "react-intersection-observer";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
-// Sample news data
-const newsData = [
-  {
-    title: "Valor & Rise Kohyang High Schools Get AP Honor Roll",
-    description: "Both schools receive AP School Honor Roll recognition for excellence.",
-    date: "December 5, 2024",
-    imageUrl: "images/section6/honer.jpg",
-    link: "#",
-  },
-  {
-    title: "Bright Star Grad Earns Triple Degrees",
-    description: "Elias Cruz earns a high school diploma and two associate degrees in one week.",
-    date: "June 18, 2024",
-    imageUrl: "images/section6/Degree.jpg",
-    link: "#",
-  },
-  {
-    title: "Student Earns Triple Degrees, Featured in La Opinión",
-    description: "Elias Cruz earns a diploma and two associate degrees, gaining media attention.",
-    date: "June 12, 2024",
-    imageUrl: "images/section6/honer.jpg",
-    link: "#",
-  },
-  {
-    title: "Bright Star Grad Earns Triple Degrees",
-    description: "Elias Cruz earns a high school diploma and two associate degrees in one week.",
-    date: "June 18, 2024",
-    imageUrl: "images/section6/Degree.jpg",
-    link: "#",
-  },
-  {
-    title: "Student Earns Triple Degrees, Featured in La Opinión",
-    description: "Elias Cruz earns a diploma and two associate degrees, gaining media attention.",
-    date: "June 12, 2024",
-    imageUrl: "images/section6/honer.jpg",
-    link: "#",
-  },
-  {
-    title: "Bright Star Grad Earns Triple Degrees",
-    description: "Elias Cruz earns a high school diploma and two associate degrees in one week.",
-    date: "June 18, 2024",
-    imageUrl: "images/section6/Degree.jpg",
-    link: "#",
-  },
-  {
-    title: "Student Earns Triple Degrees, Featured in La Opinión",
-    description: "Elias Cruz earns a diploma and two associate degrees, gaining media attention.",
-    date: "June 12, 2024",
-    imageUrl: "images/section6/honer.jpg",
-    link: "#",
-  },
-  {
-    title: "Bright Star Grad Earns Triple Degrees",
-    description: "Elias Cruz earns a high school diploma and two associate degrees in one week.",
-    date: "June 18, 2024",
-    imageUrl: "images/section6/Degree.jpg",
-    link: "#",
-  },
-  {
-    title: "Student Earns Triple Degrees, Featured in La Opinión",
-    description: "Elias Cruz earns a diploma and two associate degrees, gaining media attention.",
-    date: "June 12, 2024",
-    imageUrl: "images/section6/honer.jpg",
-    link: "#",
-  },
-  {
-    title: "Bright Star Grad Earns Triple Degrees",
-    description: "Elias Cruz earns a high school diploma and two associate degrees in one week.",
-    date: "June 18, 2024",
-    imageUrl: "images/section6/Degree.jpg",
-    link: "#",
-  },
-  {
-    title: "Student Earns Triple Degrees, Featured in La Opinión",
-    description: "Elias Cruz earns a diploma and two associate degrees, gaining media attention.",
-    date: "June 12, 2024",
-    imageUrl: "images/section6/honer.jpg",
-    link: "#",
-  },
-];
-
-interface ArrowProps {
-  onClick?: () => void;
-}
-
-const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
-  return (
-    <button
-      className="absolute -left-14 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-60 w-12 h-12 flex items-center justify-center rounded-full text-white hover:bg-opacity-80 transition-all z-20"
-      onClick={onClick}
-    >
-      <FaArrowLeft size={24} />
-    </button>
-  );
-};
-
-const NextArrow: React.FC<ArrowProps> = ({ onClick }) => {
-  return (
-    <button
-      className="absolute -right-14 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-60 w-12 h-12 flex items-center justify-center rounded-full text-white hover:bg-opacity-80 transition-all z-20"
-      onClick={onClick}
-    >
-      <FaArrowRight size={24} />
-    </button>
-  );
-};
-
-const Section6 = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: false, 
-    threshold: 0.2, 
-  });
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,       
-    autoplaySpeed: 4000,  
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    swipeToSlide: true,  
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-  
+const Allnews: React.FC = () => {
+  // Sample news data
+  const newsData = [
+    {
+      _id: "1",
+      title: "Valor & Rise Kohyang High Schools Get AP Honor Roll",
+      content:
+        "Both schools receive AP School Honor Roll recognition for excellence.",
+      date: "2024-12-05T00:00:00Z",
+      imageUrl: "images/section6/honer.jpg",
+      author: "Admin",
+      category: "Education",
+      link: "#",
+    },
+    {
+      _id: "2",
+      title: "Bright Star Grad Earns Triple Degrees",
+      content:
+        "Elias Cruz earns a high school diploma and two associate degrees in one week.",
+      date: "2024-06-18T00:00:00Z",
+      imageUrl: "images/section6/Degree.jpg",
+      author: "Admin",
+      category: "Achievement",
+      link: "#",
+    },
+    {
+      _id: "3",
+      title: "Student Earns Triple Degrees, Featured in La Opinión",
+      content:
+        "Elias Cruz earns a diploma and two associate degrees, gaining media attention.",
+      date: "2024-06-12T00:00:00Z",
+      imageUrl: "images/section6/honer.jpg",
+      author: "Admin",
+      category: "Recognition",
+      link: "#",
+    },
+  ];
 
   return (
-    <section className="py-10 px-16 text-blue-600">
-      <h2 className="text-center text-3xl font-bold text-blue-900 mb-8">
-        Latest News
+    <div className="p-6 text-secondary text-lg">
+      
+      {/* Heading with text-primary color and centered alignment */}
+      <h2 className="text-3xl font-bold mb-4 text-primary text-center">
+        News & Blogs
       </h2>
 
-      <div ref={ref} className={`relative transition-opacity duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-        <Slider {...settings}>
-          {newsData.map((news, index) => (
-            <div key={index} className="p-4">
-              <div className="shadow-lg rounded-lg overflow-hidden bg-white">
-                {/* Image Block with Hover Effect */}
-                <div className="relative group w-full h-48 overflow-hidden">
-                  <img
-                    src={news.imageUrl}
-                    alt={news.title}
-                    className="w-full h-full object-cover transition-all duration-300 group-hover:object-contain"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                {/* Content */}
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-blue-800">{news.title}</h3>
-                  <p className="mt-2 text-sm">{news.description}</p>
-                  <p className="text-xs text-gray-500 mt-2">{news.date}</p>
-                  <a
-                    href={news.link}
-                    className="inline-block mt-4 px-4 py-2 text-blue-600 font-bold border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition-all"
-                  >
-                    Learn More
-                  </a>
-                </div>
+      <div className="col-span-4 grid grid-cols-1 gap-2 px-2">
+        {newsData.map((post) => (
+          <div
+            key={post._id}
+            className="min-w-32 shadow-md rounded-lg p-4 hover:shadow-2xl hover:scale-105 transition-transform h-auto "
+          >
+            {/* Image */}
+            <div className="relative w-full h-80 rounded-md overflow-hidden mx-auto bg-gray-200 flex items-center justify-center">
+              <img
+                src={post.imageUrl}
+                alt={post.title}
+                className="w-full h-full object-contain"
+              />
+            </div>
+              <div className="flex">
+               <div className="mx-auto sm:w-1/2">
+                 {/* Title & Meta Information */}
+                 <h3 className="mt-2 text-lg font-semibold font-serif text-primary">
+                  {post.title}
+                </h3>
+                <p className="">Category: {post.category}</p>
+                <p className="">{post.content}</p>
+                <p className="mb-2 ">
+                  By {post.author} on{" "}
+                  {new Date(post.date).toLocaleString("en-IN", {
+                    timeZone: "Asia/Kolkata",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit",
+                    hour12: true,
+                  })}
+                </p>
+               </div>
               </div>
             </div>
-          ))}
-        </Slider>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Section6;
+export default Allnews;
